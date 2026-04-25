@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <main>
+    <p class="home-link"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></p>
+    {{ content }}
+    <hr>
+    <footer>
+      <p>This page is part of <a href="{{ '/' | relative_url }}">nitishagar/privacy</a>. Raw source: <a href="https://github.com/nitishagar/privacy">github.com/nitishagar/privacy</a>.</p>
+    </footer>
+  </main>
+</body>
+</html>
