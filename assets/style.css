@@ -101,21 +101,15 @@ hr {
 }
 .brand .mark {
   display: inline-block;
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-  background: var(--gradient);
-  position: relative;
+  width: 28px;
+  height: 28px;
+  background: var(--text);
+  -webkit-mask: url("/assets/logo-mono.svg") no-repeat center / contain;
+          mask: url("/assets/logo-mono.svg") no-repeat center / contain;
+  transition: background 200ms ease;
 }
-.brand .mark::after {
-  content: "A";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: #0a0b0f;
-  font-weight: 900;
-  font-size: 15px;
+.brand:hover .mark {
+  background: var(--accent-b);
 }
 .nav-links {
   display: flex;
