@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cape — Privacy policy — AppLair</title>
+  <meta name="description" content="Privacy policy for cape, a self-directed nicotine taper tracker.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>AppLair</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/privacy/">All policies</a>
+      <a href="/">applair.in</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/privacy/">← All privacy policies</a>
+
+  <h1>cape — Privacy policy</h1>
+  <p class="updated">Last updated: 2026-04-25</p>
+
+  <p><strong>cape</strong> is a self-directed nicotine-taper tracker for adults 18 and older.</p>
+
+  <h2>Summary</h2>
+  <p><strong>cape stores every piece of personal data on your device.</strong> Nothing you enter — your starting intake, daily check-ins, craving logs, notes, milestones, or the generated taper plan — is transmitted off the device. cape has no backend server, no account system, and does not use any analytics or crash-reporting SDK.</p>
+
+  <h2>Data we collect</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>What</th><th>Where it lives</th><th>Shared?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Health &amp; fitness</td>
+        <td>Daily nicotine intake (mg), craving intensity &amp; timestamp, breathing-session completion</td>
+        <td>Device-local SQLite database (Android internal storage)</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>App preferences</td>
+        <td>Onboarding completion flags, streak counter, reminder time</td>
+        <td>Android SharedPreferences</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Device-generated</td>
+        <td>Local timezone (for scheduling daily reminders)</td>
+        <td>Not persisted; used in-memory for the Android notification alarm</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We do <strong>not</strong> collect: identifiers, email, location, contacts, messages, photos, audio, or any advertising ID.</p>
+
+  <h2>How data is used</h2>
+  <p>Data is used <strong>only</strong> to render your own in-app dashboards, compute your taper plan and streak, and schedule the local reminder notification. It never leaves the device.</p>
+
+  <h2>Third parties</h2>
+  <p>cape uses the following open-source libraries. None of them transmit your data off the device in cape's configuration:</p>
+  <ul>
+    <li>Drift / sqlite3 — local database</li>
+    <li>flutter_local_notifications + permission_handler — local daily reminder alarms</li>
+    <li>shared_preferences — local key/value storage</li>
+    <li>fl_chart, flutter_animate, confetti — UI only (no network)</li>
+  </ul>
+  <p>cape does not integrate with any ads SDK, tracking SDK, analytics SDK, or crash-reporting SDK.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><strong><code>POST_NOTIFICATIONS</code></strong> (Android 13+) — to show your daily check-in reminder.</li>
+  </ul>
+  <p>No other runtime permission is requested.</p>
+
+  <h2>Your controls</h2>
+  <ul>
+    <li><strong>Delete all data</strong> — uninstall the app. Android removes all of cape's private storage on uninstall.</li>
+    <li><strong>Pause reminders</strong> — toggle in Settings → Reminder.</li>
+    <li><strong>Export</strong> — the Settings screen offers a local export of your entries as a JSON file you keep yourself.</li>
+  </ul>
+
+  <h2>Not a medical device</h2>
+  <p>cape is an educational tool. It is <strong>not a medical device</strong> and does not provide medical advice. If you are pregnant, have a heart condition, or have been advised by a physician not to reduce nicotine abruptly, consult your doctor before using cape.</p>
+
+  <h2>Children</h2>
+  <p>cape is age-gated to users aged 18 and older. Minors should not use cape.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>Material changes will be noted in the <em>Last updated</em> line at the top of this page and called out in the app's release notes for the relevant version.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or concerns? Email <a href="mailto:privacy@applair.in">privacy@applair.in</a> or open a public issue at <a href="https://github.com/nitishagar/cape/issues">github.com/nitishagar/cape/issues</a>. I read every issue.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> AppLair.</span>
+    <span><a href="/">applair.in</a></span>
+  </div>
+</footer>
+
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
