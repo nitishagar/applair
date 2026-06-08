@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>The community layer for your gym — PoC</title>
+<style>
+  :root{
+    --accent:#ff4d2e;        /* swappable brand color */
+    --accent-soft:#ffeae6;
+    --ink:#15171c;
+    --muted:#6b7280;
+    --line:#eceef1;
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --good:#16a34a;
+    --warn:#d97706;
+    --bad:#dc2626;
+    --radius:18px;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased}
+  .stage{max-width:1120px;margin:0 auto;padding:28px 18px 60px}
+  .topctl{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-bottom:26px}
+  .topctl .group{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 8px 6px 14px}
+  .topctl label{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+  .seg{display:flex;background:#eef0f3;border-radius:999px;padding:3px}
+  .seg button{border:0;background:transparent;padding:8px 16px;border-radius:999px;font-weight:650;font-size:13px;color:var(--muted);cursor:pointer}
+  .seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  .brandpick{display:flex;gap:6px}
+  .brandpick button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:12.5px;font-weight:650;cursor:pointer;color:var(--ink)}
+  .brandpick button.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .swatch{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  .hint{text-align:center;color:var(--muted);font-size:12.5px;margin:-12px 0 22px}
+
+  .frames{display:flex;gap:46px;justify-content:center;align-items:flex-start;flex-wrap:wrap}
+
+  /* phone */
+  .phone{width:372px;flex:0 0 auto}
+  .device{position:relative;background:#0c0d10;border-radius:46px;padding:12px;box-shadow:0 30px 70px -28px rgba(0,0,0,.5)}
+  .screen{position:relative;background:var(--bg);border-radius:36px;overflow:hidden;height:780px;display:flex;flex-direction:column}
+  .notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:150px;height:26px;background:#0c0d10;border-radius:0 0 18px 18px;z-index:40}
+  .statusbar{height:46px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 26px 6px;font-size:12px;font-weight:650;color:var(--ink)}
+  .appbar{padding:6px 18px 12px;display:flex;align-items:center;gap:10px;background:var(--bg)}
+  .gymlogo{width:34px;height:34px;border-radius:10px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex:0 0 auto}
+  .gymname{font-weight:800;font-size:16px;line-height:1.05}
+  .gymname small{display:block;font-weight:600;font-size:11px;color:var(--muted)}
+  .body{flex:1;overflow-y:auto;padding:4px 14px 90px}
+  .body::-webkit-scrollbar{width:0}
+
+  .tabbar{position:absolute;bottom:0;left:0;right:0;height:74px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;padding-bottom:8px;z-index:30}
+  .tabbar button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;font-weight:650;color:var(--muted);cursor:pointer}
+  .tabbar button.on{color:var(--accent)}
+  .tabbar .ico{font-size:20px;line-height:1}
+  .fab{position:absolute;bottom:84px;right:16px;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:0;font-size:28px;box-shadow:0 10px 22px -6px var(--accent);z-index:31;cursor:pointer}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:12px 0}
+  .post .ph{display:flex;align-items:center;gap:10px;margin-bottom:9px}
+  .av{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:750;font-size:14px;color:#fff;flex:0 0 auto}
+  .post .who{font-weight:750;font-size:14px}
+  .post .meta{font-size:11.5px;color:var(--muted)}
+  .post .txt{font-size:14px;line-height:1.42;margin:2px 0 10px}
+  .pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:750;padding:4px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin-bottom:8px}
+  .datacard{background:#0c0d10;color:#fff;border-radius:14px;padding:12px 14px;margin:4px 0 10px;display:flex;align-items:center;justify-content:space-between}
+  .datacard .lift{font-size:12px;color:#aeb4bf;font-weight:600}
+  .datacard .val{font-size:22px;font-weight:800;letter-spacing:-.01em}
+  .datacard .delta{font-size:12px;font-weight:750;color:#34d399}
+  .react{display:flex;gap:18px;align-items:center;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+  .react button{border:0;background:none;font-size:13px;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:6px;cursor:pointer}
+  .react button.cheer.on{color:var(--accent)}
+
+  .h{font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin:18px 4px 2px}
+  .lead{display:flex;align-items:center;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line)}
+  .rank{width:24px;font-weight:800;color:var(--muted);text-align:center}
+  .lead .who{font-weight:700;font-size:14px;flex:1}
+  .lead .who small{display:block;color:var(--muted);font-weight:600;font-size:11.5px}
+  .lead .n{font-weight:800;color:var(--accent)}
+  .streak{font-size:12px;font-weight:750;color:var(--warn)}
+
+  .logrow{display:flex;align-items:center;justify-content:space-between;padding:12px 2px;border-bottom:1px solid var(--line)}
+  .logrow .ex{font-weight:700;font-size:14px}
+  .logrow .sets{font-size:12px;color:var(--muted)}
+  .logbtn{width:100%;border:0;background:var(--accent);color:#fff;font-weight:750;font-size:15px;padding:14px;border-radius:14px;margin-top:14px;cursor:pointer}
+  .ghostbtn{width:100%;border:1px dashed var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:750;font-size:14px;padding:13px;border-radius:14px;margin-top:10px;cursor:pointer}
+  .prbanner{background:linear-gradient(135deg,var(--accent),#ff8a5b);color:#fff;border-radius:16px;padding:16px;text-align:center;margin:8px 0}
+  .prbanner .big{font-size:30px;font-weight:850;letter-spacing:-.02em}
+  .nudge{display:flex;align-items:center;gap:10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:14px;padding:11px 13px;margin:10px 0;font-size:13px}
+  .me-hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px 0 6px}
+  .me-hero .av{width:74px;height:74px;font-size:26px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+  .badge{font-size:11px;font-weight:750;background:var(--accent-soft);color:var(--accent);padding:6px 11px;border-radius:999px}
+  .statgrid{display:flex;gap:10px;margin-top:14px}
+  .stat{flex:1;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;text-align:center}
+  .stat .v{font-size:21px;font-weight:850}
+  .stat .l{font-size:11px;color:var(--muted);font-weight:600;margin-top:2px}
+
+  /* owner dashboard */
+  .dash{width:430px;flex:0 0 auto}
+  .dashcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px 22px;box-shadow:0 24px 60px -34px rgba(0,0,0,.4)}
+  .dashhead{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .dashhead .gymlogo{width:40px;height:40px;border-radius:12px;font-size:17px}
+  .dashhead h3{margin:0;font-size:17px}
+  .dashhead .tag{font-size:11.5px;color:var(--muted);font-weight:600}
+  .pilotchip{margin-left:auto;font-size:11px;font-weight:750;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:5px 10px;border-radius:999px}
+  .kpis{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+  .kpi{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px}
+  .kpi .l{font-size:11.5px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+  .kpi .v{font-size:27px;font-weight:850;margin-top:5px;letter-spacing:-.02em}
+  .kpi .d{font-size:12px;font-weight:750;margin-top:3px}
+  .up{color:var(--good)} .down{color:var(--bad)}
+  .section-t{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);margin:22px 0 10px}
+  .bars{display:flex;align-items:flex-end;gap:26px;height:150px;padding:8px 6px 0;border-bottom:1px solid var(--line)}
+  .barwrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
+  .bar{width:64px;border-radius:10px 10px 0 0;display:flex;align-items:flex-start;justify-content:center;color:#fff;font-weight:800;font-size:15px;padding-top:8px}
+  .barlbl{font-size:11.5px;font-weight:700;color:var(--muted);text-align:center;line-height:1.25}
+  .legend{font-size:11.5px;color:var(--muted);margin-top:10px;text-align:center}
+  .risk{display:flex;align-items:center;gap:11px;padding:11px 2px;border-bottom:1px solid var(--line)}
+  .risk .who{flex:1;font-weight:700;font-size:13.5px}
+  .risk .who small{display:block;font-weight:600;color:var(--bad);font-size:11.5px}
+  .risk .sendbtn{border:1px solid var(--accent);background:#fff;color:var(--accent);font-weight:750;font-size:12px;padding:7px 12px;border-radius:999px;cursor:pointer}
+  .footnote{font-size:11px;color:var(--muted);margin-top:16px;line-height:1.5}
+  .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:#0c0d10;color:#fff;padding:12px 20px;border-radius:999px;font-size:13.5px;font-weight:650;opacity:0;transition:.28s;z-index:99}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .caption{text-align:center;font-size:12.5px;color:var(--muted);font-weight:650;margin-top:14px}
+  @media(max-width:520px){.phone,.dash{width:100%}.screen{height:680px}}
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <div class="topctl">
+    <div class="group">
+      <label>VIEW</label>
+      <div class="seg" id="viewseg">
+        <button data-view="member" class="on">📱 Member app</button>
+        <button data-view="owner">📊 Gym owner</button>
+      </div>
+    </div>
+    <div class="group">
+      <label>WHITE-LABEL AS</label>
+      <div class="brandpick" id="brandpick">
+        <button data-name="Gym 9" data-init="9" data-c="#ff4d2e" class="on"><span class="swatch" style="background:#ff4d2e"></span>Gym 9</button>
+        <button data-name="Anytime Fitness" data-init="A" data-c="#7c3aed"><span class="swatch" style="background:#7c3aed"></span>Anytime</button>
+        <button data-name="Iron Court" data-init="IC" data-c="#0ea5e9"><span class="swatch" style="background:#0ea5e9"></span>Iron Court</button>
+      </div>
+    </div>
+  </div>
+  <div class="hint">↑ Switch <b>view</b> to see the member app vs. the owner dashboard. Switch <b>white-label</b> to rebrand the whole app live — this is your gym, your colours.</div>
+
+  <div class="frames">
+    <!-- PHONE -->
+    <div class="phone" id="phoneFrame">
+      <div class="device">
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="statusbar"><span>9:41</span><span>5G &nbsp; 🔋</span></div>
+          <div class="appbar">
+            <div class="gymlogo" id="logo">9</div>
+            <div class="gymname" id="hdrname">Gym 9 <small id="hdrsub">Members community · Ghaziabad</small></div>
+          </div>
+          <div class="body" id="phoneBody"><!-- injected --></div>
+          <button class="fab" id="fab">＋</button>
+          <div class="tabbar" id="tabbar">
+            <button data-tab="feed" class="on"><span class="ico">🏠</span>Feed</button>
+            <button data-tab="log"><span class="ico">📓</span>Log</button>
+            <button data-tab="squad"><span class="ico">🔥</span>Squad</button>
+            <button data-tab="me"><span class="ico">🙂</span>Me</button>
+          </div>
+        </div>
+      </div>
+      <div class="caption">Member-facing app · branded for the gym</div>
+    </div>
+
+    <!-- OWNER DASHBOARD -->
+    <div class="dash" id="dashFrame" style="display:none">
+      <div class="dashcard" id="dashBody"><!-- injected --></div>
+      <div class="caption">Owner dashboard · the retention story you sell</div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const state = { view:'member', tab:'feed', name:'Gym 9', init:'9', color:'#ff4d2e', sub:'Members community · Ghaziabad', cheered:{} };
+
+const initials = s => s.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+const colorFor = n => { const c=['#ef4444','#f59e0b','#10b981','#3b82f6','#8b5cf6','#ec4899','#14b8a6']; let h=0; for(const ch of n)h=(h*31+ch.charCodeAt(0))%c.length; return c[h]; };
+
+const feed = [
+  {who:'Rohan K.', t:'18m', txt:'Finally pulled 140 after 5 weeks stuck at 130. Form felt clean. 🙌', lift:'Deadlift PR', val:'140 kg', delta:'+10 kg', cheers:23, comments:6, sourced:true},
+  {who:'Priya M.', t:'1h', txt:'Day 21 streak. Showing up even on the bad days is the whole game. Who else is in tomorrow 7am?', cheers:31, comments:9, streak:true},
+  {who:'Coach Vikram', t:'2h', txt:'Form check Friday 👀 Drop a video of your squat below and I’ll review the top 5 before the weekend.', pill:'Coach · pinned', cheers:18, comments:14},
+  {who:'Sneha R.', t:'3h', txt:'First month done at Gym 9. Down 2.4 kg and actually looking forward to leg day (??). This community is unreal.', lift:'Bodyweight', val:'−2.4 kg', delta:'30-day', cheers:42, comments:11, sourced:true},
+  {who:'Arjun T.', t:'5h', txt:'Bench finally moving again. Slow and steady.', lift:'Bench PR', val:'82.5 kg', delta:'+2.5 kg', cheers:15, comments:3, sourced:true},
+];
+
+const squad = [
+  {who:'Priya M.', sub:'21-day streak 🔥', n:'14', unit:'sessions'},
+  {who:'Rohan K.', sub:'Deadlift +10kg this month', n:'12', unit:'sessions'},
+  {who:'Aditya S.', sub:'Back after 9 days away', n:'11', unit:'sessions'},
+  {who:'Sneha R.', sub:'New this month', n:'10', unit:'sessions'},
+  {who:'You', sub:'On a 6-day streak', n:'9', unit:'sessions', me:true},
+];
+
+const logbook = [
+  {ex:'Back Squat', sets:'5×5 · 90 kg', pr:false},
+  {ex:'Romanian Deadlift', sets:'3×8 · 70 kg', pr:false},
+  {ex:'Leg Press', sets:'3×12 · 160 kg', pr:true},
+  {ex:'Hanging Leg Raise', sets:'3×15', pr:false},
+];
+
+function postCard(p){
+  const col = colorFor(p.who);
+  const id = p.who+p.t;
+  const on = state.cheered[id] ? 'on':'';
+  const cheers = p.cheers + (state.cheered[id]?1:0);
+  return `<div class="card post">
+    <div class="ph">
+      <div class="av" style="background:${col}">${initials(p.who)}</div>
+      <div><div class="who">${p.who}</div><div class="meta">${p.t} ago · ${state.name}</div></div>
+    </div>
+    ${p.pill?`<div class="pill">📌 ${p.pill}</div>`:''}
+    <div class="txt">${p.txt.replace('Gym 9',state.name)}</div>
+    ${p.lift?`<div class="datacard"><div><div class="lift">${p.lift}</div><div class="val">${p.val}</div></div><div class="delta">${p.delta}</div></div>`:''}
+    ${p.sourced?`<div class="pill">📊 Logged in-app · verified progress</div>`:''}
+    ${p.streak?`<div class="pill">🔥 21-day streak</div>`:''}
+    <div class="react">
+      <button class="cheer ${on}" data-cheer="${id}">💪 ${cheers}</button>
+      <button>💬 ${p.comments}</button>
+      <button style="margin-left:auto">↗︎ Share</button>
+    </div>
+  </div>`;
+}
+
+function render(){
+  // brand
+  document.documentElement.style.setProperty('--accent', state.color);
+  document.documentElement.style.setProperty('--accent-soft', hexSoft(state.color));
+  document.getElementById('logo').textContent = state.init;
+  document.getElementById('hdrname').firstChild.textContent = state.name+' ';
+  document.getElementById('hdrsub').textContent = state.sub;
+
+  document.getElementById('phoneFrame').style.display = state.view==='member'?'':'none';
+  document.getElementById('dashFrame').style.display = state.view==='owner'?'':'none';
+
+  if(state.view==='member') renderTab();
+  else renderDash();
+}
+
+function renderTab(){
+  const b = document.getElementById('phoneBody');
+  if(state.tab==='feed'){
+    b.innerHTML = `<div class="nudge">👋 <span><b>3 of your gym buddies</b> trained today. Your streak is alive — keep it going.</span></div>`
+      + feed.map(postCard).join('');
+  }
+  if(state.tab==='log'){
+    b.innerHTML = `<div class="h">Today · Leg Day</div>
+      <div class="card">
+        ${logbook.map(l=>`<div class="logrow"><div><div class="ex">${l.ex} ${l.pr?'<span style="color:var(--accent)">★ PR</span>':''}</div><div class="sets">${l.sets}</div></div><div style="color:var(--good);font-weight:800">✓</div></div>`).join('')}
+        <button class="logbtn" data-act="logset">＋ Log another set</button>
+        <button class="ghostbtn" data-act="sharepr">📊 Share today’s PR to ${state.name}</button>
+      </div>
+      <div class="prbanner"><div>Estimated 1RM · Squat</div><div class="big">128 kg</div><div>▲ 6% in 6 weeks</div></div>
+      <div class="h">This week</div>
+      <div class="statgrid">
+        <div class="stat"><div class="v">4</div><div class="l">sessions</div></div>
+        <div class="stat"><div class="v">3</div><div class="l">PRs</div></div>
+        <div class="stat"><div class="v">6</div><div class="l">day streak</div></div>
+      </div>`;
+  }
+  if(state.tab==='squad'){
+    b.innerHTML = `<div class="prbanner"><div>This week at ${state.name}</div><div class="big">312 sessions</div><div>logged by 84 members</div></div>
+      <div class="h">Top this week</div>
+      <div class="card">${squad.map((s,i)=>`<div class="lead"><div class="rank">${i+1}</div><div class="av" style="background:${s.me?state.color:colorFor(s.who)}">${initials(s.who)}</div><div class="who">${s.who}${s.me?' (you)':''}<small>${s.sub}</small></div><div class="n">${s.n}</div></div>`).join('')}</div>
+      <div class="h">Bring a buddy</div>
+      <div class="card"><div style="font-size:13.5px;line-height:1.5;color:var(--muted)">Members who train with a friend stay <b style="color:var(--ink)">2× longer</b>. Nudge someone who hasn’t shown up this week.</div>
+        <button class="ghostbtn" data-act="nudge">🔔 Nudge Aditya — last seen 9 days ago</button></div>`;
+  }
+  if(state.tab==='me'){
+    b.innerHTML = `<div class="me-hero">
+        <div class="av" style="background:${state.color}">YO</div>
+        <div style="font-weight:800;font-size:18px;margin-top:8px">You</div>
+        <div class="meta" style="color:var(--muted);font-size:12.5px">Member at ${state.name} · since Apr 2026</div>
+        <div class="badges"><span class="badge">🔥 6-day streak</span><span class="badge">🏋️ 3 PRs</span><span class="badge">🤝 2 buddies</span></div>
+      </div>
+      <div class="statgrid">
+        <div class="stat"><div class="v">37</div><div class="l">sessions</div></div>
+        <div class="stat"><div class="v">11</div><div class="l">PRs all-time</div></div>
+        <div class="stat"><div class="v">82%</div><div class="l">show-up rate</div></div>
+      </div>
+      <div class="h">Recent PRs</div>
+      <div class="card">
+        <div class="datacard"><div><div class="lift">Squat</div><div class="val">120 kg</div></div><div class="delta">+15 kg / 90d</div></div>
+        <div class="datacard"><div><div class="lift">Deadlift</div><div class="val">140 kg</div></div><div class="delta">+20 kg / 90d</div></div>
+      </div>`;
+  }
+}
+
+function renderDash(){
+  const d = document.getElementById('dashBody');
+  const risk = [
+    {who:'Manish G.', sub:'No visit in 16 days · churn risk'},
+    {who:'Kavya N.', sub:'2 visits in 30 days · low engagement'},
+    {who:'Rahul B.', sub:'No visit in 21 days · churn risk'},
+  ];
+  d.innerHTML = `
+    <div class="dashhead">
+      <div class="gymlogo">${state.init}</div>
+      <div><h3>${state.name}</h3><div class="tag">Owner dashboard · member retention</div></div>
+      <div class="pilotchip">● Pilot · Day 47 / 90</div>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><div class="l">Active members</div><div class="v">842</div><div class="d up">▲ 41 this month</div></div>
+      <div class="kpi"><div class="l">Avg visits / member / wk</div><div class="v">2.8</div><div class="d up">▲ from 1.9 at start</div></div>
+      <div class="kpi"><div class="l">90-day retention</div><div class="v">71%</div><div class="d up">▲ vs 52% baseline</div></div>
+      <div class="kpi"><div class="l">At-risk members</div><div class="v">38</div><div class="d down">flagged for outreach</div></div>
+    </div>
+
+    <div class="section-t">6-month retention · community vs non-community members</div>
+    <div class="bars">
+      <div class="barwrap"><div class="bar" style="height:50%;background:#cbd2da">48%</div><div class="barlbl">Not on<br>the app</div></div>
+      <div class="barwrap"><div class="bar" style="height:74%;background:${state.color}">71%</div><div class="barlbl">Active on<br>${state.name} app</div></div>
+    </div>
+    <div class="legend">Members who log workouts &amp; engage with the community retain <b>+23 pts</b> better. At ₹1,800/mo, that’s ≈ <b>₹4.9L</b> in saved revenue across this cohort.</div>
+
+    <div class="section-t">Engagement this week</div>
+    <div class="kpis" style="margin:0 0 4px">
+      <div class="kpi"><div class="l">Community DAU</div><div class="v">38%</div><div class="d up">of members</div></div>
+      <div class="kpi"><div class="l">Workouts logged</div><div class="v">312</div><div class="d up">▲ 12%</div></div>
+    </div>
+
+    <div class="section-t">At-risk members → 1-tap re-engagement</div>
+    ${risk.map(r=>`<div class="risk"><div class="av" style="background:${colorFor(r.who)}">${initials(r.who)}</div><div class="who">${r.who}<small>${r.sub}</small></div><button class="sendbtn" data-act="reengage">Send nudge</button></div>`).join('')}
+
+    <div class="footnote">Re-engaged members are <b>~45% less likely to cancel</b> than those left alone. The app flags them automatically and lets your front desk nudge in one tap — no manual list-pulling.<br><br>
+    <b>Pilot terms:</b> 90 days · free · fully branded as ${state.name} · we measure retention &amp; visit-frequency vs your own trailing numbers. You keep all member data.</div>
+  `;
+}
+
+function hexSoft(hex){
+  const h=hex.replace('#',''); const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+  return `rgba(${r},${g},${b},.12)`;
+}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove('show'),1900);}
+
+// events
+document.getElementById('viewseg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');state.view=b.dataset.view;render();});
+document.getElementById('brandpick').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  state.name=b.dataset.name;state.init=b.dataset.init;state.color=b.dataset.c;
+  state.sub = b.dataset.name==='Gym 9'?'Members community · Ghaziabad':(b.dataset.name==='Anytime Fitness'?'Members community · Indiranagar':'Members community · Pune');
+  render();});
+document.getElementById('tabbar').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  [...e.currentTarget.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');state.tab=b.dataset.tab;renderTab();});
+document.getElementById('fab').addEventListener('click',()=>toast('Compose — log a workout or share a PR'));
+document.getElementById('phoneBody').addEventListener('click',e=>{
+  const c=e.target.closest('[data-cheer]'); if(c){const id=c.dataset.cheer;state.cheered[id]=!state.cheered[id];renderTab();return;}
+  const a=e.target.closest('[data-act]'); if(a){const m={logset:'Set logged ✓',sharepr:'PR shared to your gym feed 🎉',nudge:'Nudge sent to Aditya 🔔'};toast(m[a.dataset.act]||'Done');}
+});
+document.getElementById('dashBody')?.addEventListener('click',e=>{const a=e.target.closest('[data-act]');if(a)toast('Re-engagement nudge sent ✓');});
+document.addEventListener('click',e=>{const a=e.target.closest('#dashBody [data-act]');if(a)toast('Re-engagement nudge sent ✓');});
+
+render();
+</script>
+</body>
+</html>

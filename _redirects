@@ -2,6 +2,7 @@
 /index.html                 /                        301
 /privacy/index.html         /privacy/                301
 /privacy/cape/index.html    /privacy/cape/           301
+/gym/index.html             /gym/                    301
 
 # Legacy Jekyll paths (from the old /privacy baseurl site)
 /cape/                      /privacy/cape/           301
