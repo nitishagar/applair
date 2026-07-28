@@ -1,9 +1,11 @@
 # applair.in
 
-Source for **[applair.in](https://applair.in)** — the AppLair consulting site and
-the privacy policies for Android apps published under AppLair.
+Source for **[applair.in](https://applair.in)** — AppLair open software
+consulting (mobile, platforms, AI tooling) and privacy policies for Android
+apps published under AppLair.
 
 - Landing page: `/`
+- Machine-readable summary: `/llms.txt`
 - Privacy policies: `/privacy/`
   - cape — `/privacy/cape/` · `/privacy/cape/data-safety.html`
 
