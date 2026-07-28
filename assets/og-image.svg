@@ -1,32 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <defs>
-    <linearGradient id="wash" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#dfeae7"/>
-      <stop offset="0.55" stop-color="#f3f6f5"/>
-      <stop offset="1" stop-color="#d5e4e0"/>
-    </linearGradient>
-    <pattern id="topo" width="160" height="160" patternUnits="userSpaceOnUse">
-      <g fill="none" stroke="#0f766e" stroke-opacity="0.22" stroke-width="1.5">
-        <path d="M0 40c20 0 20 20 40 20s20-20 40-20 20 20 40 20 20-20 40-20"/>
-        <path d="M0 80c20 0 20 20 40 20s20-20 40-20 20 20 40 20 20-20 40-20"/>
-        <path d="M0 120c20 0 20 20 40 20s20-20 40-20 20 20 40 20 20-20 40-20"/>
-        <path d="M40 0c0 20 20 20 20 40s-20 20-20 40 20 20 20 40"/>
-        <path d="M80 0c0 20 20 20 20 40s-20 20-20 40 20 20 20 40"/>
-        <path d="M120 0c0 20 20 20 20 40s-20 20-20 40 20 20 20 40"/>
-      </g>
-    </pattern>
-  </defs>
-  <rect width="1200" height="630" fill="url(#wash)"/>
-  <rect width="1200" height="630" fill="url(#topo)"/>
-  <rect x="0" y="420" width="1200" height="210" fill="#0f2f2c"/>
-  <g transform="translate(88, 120)" fill="none" stroke="#0f2f2c" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <rect width="1200" height="630" fill="#fafafa"/>
+  <line x1="0" y1="470" x2="1200" y2="470" stroke="#e8e8e8" stroke-width="1"/>
+  <g transform="translate(96, 140)" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
     <path d="M 26 104 L 60 16 L 78 64"/>
     <circle cx="78" cy="80" r="16"/>
   </g>
-  <text x="88" y="360" font-family="Syne, Segoe UI, sans-serif"
-        font-size="92" font-weight="800" fill="#0f2f2c" letter-spacing="-2">AppLair</text>
-  <text x="88" y="500" font-family="Instrument Serif, Georgia, serif"
-        font-size="42" font-weight="400" fill="#eef6f3">Open consulting for software that lasts.</text>
-  <text x="88" y="555" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
-        font-size="22" font-weight="500" fill="#b7cbc5" letter-spacing="3">APPLAIR.IN</text>
+  <text x="96" y="380" font-family="Syne, Segoe UI, sans-serif"
+        font-size="88" font-weight="800" fill="#111111" letter-spacing="-2">AppLair</text>
+  <text x="96" y="540" font-family="Instrument Serif, Georgia, serif"
+        font-size="40" font-weight="400" fill="#555555">Open consulting for software that lasts.</text>
 </svg>
