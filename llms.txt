@@ -12,12 +12,11 @@
 - Architecture and code review for mobile and platform codebases
 - App Store / Play Store launch and compliance shipping
 - Fractional tech lead engagements
-- Open source contribution and AI tooling (MCP, LLM gateway guardrails)
+- Open source and AI tooling (MCP, LLM gateway guardrails)
 
 ## Open source to highlight
 - receipta — https://github.com/nitishagar/receipta — npm packages @receipta/* (Apache-2.0)
 - lexvault — https://github.com/nitishagar/lexvault — PyPI package lexvault (Apache-2.0)
-- Apache Superset contributions — https://github.com/apache/superset/pulls?q=is%3Apr+author%3Anitishagar+is%3Amerged
 - SoberAI — https://github.com/nitishagar/sober-ai — MIT
 - OTel Query MCP — https://github.com/nitishagar/OTel-query-mcp — Apache-2.0
 - mcp-author-kit — https://github.com/nitishagar/mcp-author-kit — MIT Cursor plugin

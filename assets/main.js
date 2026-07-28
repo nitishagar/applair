@@ -6,7 +6,7 @@
   if (reduce || !("IntersectionObserver" in window)) return;
 
   const targets = document.querySelectorAll(
-    "#services .section-head, #services .service-list, #open-source .section-head, #open-source .project-list, #approach .section-head, #approach .pillars, #contact .section-head, #contact .contact-grid"
+    "#services .section-head, #services .service-list, #open-source .section-head, #open-source .project-list, #approach .section-head, #approach .pillars, #contact .section-head, #contact .contact-grid, #contact .contact-item"
   );
   targets.forEach(function (el) {
     el.classList.add("reveal");
