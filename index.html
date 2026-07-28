@@ -3,129 +3,267 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AppLair — Mobile app consulting</title>
-  <meta name="description" content="AppLair is a boutique consultancy helping teams ship and maintain iOS & Android products that age well.">
-  <meta name="theme-color" content="#0a0b0f">
+  <title>AppLair — Open software consulting for mobile, platforms &amp; AI tooling</title>
+  <meta name="description" content="AppLair is an open consulting practice for shipping durable mobile products, contributing to open source, and building AI tooling teams can trust. Architecture reviews, launches, fractional tech lead.">
+  <meta name="keywords" content="mobile app consulting, open source consulting, Apache Superset, iOS Android consulting, AI tooling, AppLair">
+  <meta name="author" content="AppLair">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0f2f2c">
+  <link rel="canonical" href="https://applair.in/">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
-  <link rel="stylesheet" href="/assets/style.css?v=2">
-  <meta property="og:title" content="AppLair — Mobile app consulting">
-  <meta property="og:description" content="Ship iOS & Android products that last. Architecture reviews, launches, fractional tech lead, app rescues.">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#0f766e">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
+
+  <meta property="og:site_name" content="AppLair">
+  <meta property="og:title" content="AppLair — Open software consulting">
+  <meta property="og:description" content="Ship durable mobile products, contribute upstream, and build AI tooling teams can trust.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://applair.in/">
   <meta property="og:image" content="https://applair.in/assets/og-image.svg">
+  <meta property="og:image:alt" content="AppLair — open software consulting">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AppLair — Open software consulting">
+  <meta name="twitter:description" content="Ship durable mobile products, contribute upstream, and build AI tooling teams can trust.">
   <meta name="twitter:image" content="https://applair.in/assets/og-image.svg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://applair.in/#organization",
+        "name": "AppLair",
+        "url": "https://applair.in/",
+        "logo": "https://applair.in/assets/logo.svg",
+        "email": "hello@applair.in",
+        "sameAs": [
+          "https://github.com/nitishagar"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://applair.in/#service",
+        "name": "AppLair",
+        "url": "https://applair.in/",
+        "description": "Open software consulting for mobile products, open-source platforms, and AI tooling.",
+        "image": "https://applair.in/assets/og-image.svg",
+        "provider": { "@id": "https://applair.in/#organization" },
+        "areaServed": "Worldwide",
+        "serviceType": [
+          "Mobile app consulting",
+          "Architecture review",
+          "Fractional tech lead",
+          "Open source contribution"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://applair.in/#contact",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://applair.in/#website",
+        "url": "https://applair.in/",
+        "name": "AppLair",
+        "publisher": { "@id": "https://applair.in/#organization" },
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
+<a class="skip-link" href="#main">Skip to content</a>
+
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="/">
+    <a class="brand" href="/" aria-label="AppLair home">
       <span class="mark" aria-hidden="true"></span>
       <span>AppLair</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#services">Services</a>
+      <a href="#open-source">Open source</a>
       <a href="#approach" class="hide-sm">Approach</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Mobile app consulting</span>
-    <h1>Mobile apps, <span class="grad">shipped with care.</span></h1>
-    <p class="lead">AppLair is a boutique consultancy helping teams design, ship and maintain iOS &amp; Android products that age well — without the churn of the framework du jour.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="mailto:hello@applair.in?subject=AppLair%20inquiry">Start a conversation →</a>
-      <a class="btn btn-ghost" href="#services">See what we do</a>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-map" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="brand-lockup">AppLair</p>
+      <h1 id="hero-heading">Open consulting for software that lasts.</h1>
+      <p class="lead">We help teams ship durable iOS &amp; Android products, contribute upstream with confidence, and put AI tooling into production without the churn.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:hello@applair.in?subject=AppLair%20inquiry">Start a conversation</a>
+        <a class="btn btn-ghost" href="#open-source">View open source</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="services">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="kicker">Services</div>
-      <h2>Four ways to work together.</h2>
-      <p>Small engagements, outcomes-first. Pick the shape that matches where you are.</p>
+  <section id="services" aria-labelledby="services-heading">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="kicker">Services</div>
+        <h2 id="services-heading">Engagements shaped around outcomes.</h2>
+        <p>Boutique consulting — mobile shipping craft, platform hygiene, and the open-source / AI tooling layer your product now depends on.</p>
+      </div>
+      <ol class="service-list">
+        <li>
+          <h3>Architecture &amp; code review</h3>
+          <p>Targeted audits of mobile and platform codebases. Modernization roadmaps and refactor plans you can actually land.</p>
+        </li>
+        <li>
+          <h3>Launch &amp; store shipping</h3>
+          <p>Play Store and App Store submission — privacy, data-safety, compliance, staged rollout, and post-launch hygiene.</p>
+        </li>
+        <li>
+          <h3>Fractional tech lead</h3>
+          <p>Embedded with your team for a quarter. Design reviews, mentoring, unblocking, and raising the bar on craft.</p>
+        </li>
+        <li>
+          <h3>Open source &amp; AI tooling</h3>
+          <p>Upstream contributions, MCP/observability tooling, and production guardrails for LLM gateways — built the way libraries ship.</p>
+        </li>
+      </ol>
     </div>
-    <div class="cards">
-      <article class="card">
-        <div class="icon" aria-hidden="true">◇</div>
-        <h3>Architecture &amp; code review</h3>
-        <p>A second pair of eyes on your mobile codebase. Targeted audits, modernization roadmaps, refactor plans you can actually land.</p>
-      </article>
-      <article class="card">
-        <div class="icon" aria-hidden="true">△</div>
-        <h3>Launch &amp; store shipping</h3>
-        <p>Play Store and App Store submission from scratch — privacy, data-safety, compliance, staged rollout, and post-launch hygiene.</p>
-      </article>
-      <article class="card">
-        <div class="icon" aria-hidden="true">◎</div>
-        <h3>Fractional tech lead</h3>
-        <p>Embedded with your team for a quarter. Design reviews, mentoring, unblocking tricky problems, and raising the bar on craft.</p>
-      </article>
-      <article class="card">
-        <div class="icon" aria-hidden="true">✦</div>
-        <h3>App rescue</h3>
-        <p>Inherited a legacy app you can't ship? We stabilize the build, untangle the architecture, and hand it back shippable.</p>
-      </article>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="approach">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="kicker">Approach</div>
-      <h2>How we think.</h2>
-    </div>
-    <div class="pillars">
-      <div class="pillar">
-        <h3>Boring technology, used well</h3>
-        <p>We reach for the plain tool first. Native platform primitives, well-known libraries, and patterns that survive a team handoff.</p>
+  <section id="open-source" class="band" aria-labelledby="oss-heading">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="kicker">Open source</div>
+        <h2 id="oss-heading">Published libraries &amp; upstream work.</h2>
+        <p>Real packages on npm and PyPI, Apache-licensed tools, and contributions to Apache Superset — not demos. Browse the projects.</p>
       </div>
-      <div class="pillar">
-        <h3>Tight feedback loops</h3>
-        <p>Fast builds, fast tests, fast store releases. The loop between "I think this works" and "a user confirmed it works" is the real product.</p>
-      </div>
-      <div class="pillar">
-        <h3>Ship to learn</h3>
-        <p>Smaller releases, observed in the wild, beat bigger releases guessed at in a sprint-planning doc. Every engagement ends with something shipped.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="contact">
-  <div class="section-inner">
-    <div class="section-head">
-      <div class="kicker">Contact</div>
-      <h2>Say hi.</h2>
-      <p>No contact form — direct email goes further.</p>
+      <ul class="project-list">
+        <li>
+          <a class="project" href="https://github.com/nitishagar/receipta" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-tag">npm · Apache-2.0</span>
+              <h3>receipta</h3>
+              <p>Tamper-evident receipts for every AI decision — Ed25519-signed, hash-chained, offline-verifiable. Published as <code>@receipta/*</code> on npm.</p>
+            </div>
+            <span class="project-cta" aria-hidden="true">View →</span>
+          </a>
+        </li>
+        <li>
+          <a class="project" href="https://github.com/nitishagar/lexvault" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-tag">PyPI · Apache-2.0</span>
+              <h3>lexvault</h3>
+              <p>Reversible proprietary-term pseudonymization for LiteLLM. Mask codenames and schema on the way out; restore them on the way back.</p>
+            </div>
+            <span class="project-cta" aria-hidden="true">View →</span>
+          </a>
+        </li>
+        <li>
+          <a class="project" href="https://github.com/apache/superset/pulls?q=is%3Apr+author%3Anitishagar+is%3Amerged" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-tag">Apache · upstream</span>
+              <h3>Apache Superset</h3>
+              <p>Merged contributions across charts, dashboards, reports, and database engine specs on the Apache data visualization platform.</p>
+            </div>
+            <span class="project-cta" aria-hidden="true">View →</span>
+          </a>
+        </li>
+        <li>
+          <a class="project" href="https://github.com/nitishagar/sober-ai" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-tag">MIT · open source</span>
+              <h3>SoberAI</h3>
+              <p>Lighthouse for the AI age — audit sites for SSR readiness, schema coverage, semantic structure, and AI crawler readability.</p>
+            </div>
+            <span class="project-cta" aria-hidden="true">View →</span>
+          </a>
+        </li>
+        <li>
+          <a class="project" href="https://github.com/nitishagar/OTel-query-mcp" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-tag">Apache-2.0 · MCP</span>
+              <h3>OTel Query MCP</h3>
+              <p>MCP server for querying traces, logs, and metrics across OpenTelemetry Collector, Grafana, Elastic Cloud, and OpenSearch.</p>
+            </div>
+            <span class="project-cta" aria-hidden="true">View →</span>
+          </a>
+        </li>
+        <li>
+          <a class="project" href="https://github.com/nitishagar/mcp-author-kit" rel="noopener noreferrer">
+            <div class="project-meta">
+              <span class="project-tag">MIT · Cursor plugin</span>
+              <h3>mcp-author-kit</h3>
+              <p>Scaffold, grade, test, and debug Model Context Protocol servers from inside Cursor — skills, templates, and a utility MCP server.</p>
+            </div>
+            <span class="project-cta" aria-hidden="true">View →</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="label">General</div>
-        <a href="mailto:hello@applair.in">hello@applair.in</a>
+  </section>
+
+  <section id="approach" aria-labelledby="approach-heading">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="kicker">Approach</div>
+        <h2 id="approach-heading">How we work.</h2>
       </div>
-      <div class="contact-card">
-        <div class="label">New projects</div>
-        <a href="mailto:projects@applair.in">projects@applair.in</a>
+      <div class="pillars">
+        <div class="pillar">
+          <h3>Boring technology, used well</h3>
+          <p>Native platform primitives, well-known libraries, and patterns that survive a team handoff. Publish when it is a library; contribute when it belongs upstream.</p>
+        </div>
+        <div class="pillar">
+          <h3>Tight feedback loops</h3>
+          <p>Fast builds, fast tests, fast store releases. The loop between “I think this works” and “a user confirmed it works” is the real product.</p>
+        </div>
+        <div class="pillar">
+          <h3>Ship to learn</h3>
+          <p>Smaller releases, observed in the wild, beat bigger releases guessed at in a planning doc. Every engagement ends with something shipped.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section id="contact" class="band band-strong" aria-labelledby="contact-heading">
+    <div class="section-inner">
+      <div class="section-head">
+        <div class="kicker">Contact</div>
+        <h2 id="contact-heading">Tell us what you are shipping.</h2>
+        <p>No contact form — direct email goes further. Mention the product, the constraint, and the timeline.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="label">General</div>
+          <a href="mailto:hello@applair.in">hello@applair.in</a>
+        </div>
+        <div class="contact-card">
+          <div class="label">New projects</div>
+          <a href="mailto:projects@applair.in">projects@applair.in</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer class="footer">
   <div class="footer-inner">
     <span>© <span data-year>2026</span> AppLair.</span>
+    <nav aria-label="Footer">
+      <a href="https://github.com/nitishagar" rel="noopener noreferrer">GitHub</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="mailto:hello@applair.in">Email</a>
+    </nav>
   </div>
 </footer>
 
-<script src="/assets/main.js?v=2" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 </body>
 </html>

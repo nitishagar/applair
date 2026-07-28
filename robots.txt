@@ -1,4 +1,15 @@
 User-agent: *
 Allow: /
 
+# AI / LLM crawlers — explicit allow for machine-readable summary
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://applair.in/sitemap.xml
+# Machine-readable site summary: https://applair.in/llms.txt
