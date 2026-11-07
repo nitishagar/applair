@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rack Power Toolkit — Privacy policy</title>
+  <meta name="description" content="Privacy policy for Rack Power Toolkit, an offline rack power calculator for technicians.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand brand-static" href="/privacy/">
+      <span>Privacy policies</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/privacy/">All policies</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/privacy/">← All privacy policies</a>
+
+  <h1>Rack Power Toolkit — Privacy policy</h1>
+  <p class="updated">Last updated: 2026-11-07</p>
+
+  <p><strong>Rack Power Toolkit</strong> is an offline rack-PDU power calculator for data-centre and electrical technicians, colo engineers, and students.</p>
+
+  <h2>Summary</h2>
+  <p><strong>Rack Power Toolkit stores every piece of personal data on your device.</strong> Nothing you enter — power inputs and results, saved rack budgets, or generated exports — is transmitted off the device. The app has no backend server, no account system, requests zero Android permissions, and does not use any analytics or crash-reporting SDK.</p>
+
+  <h2>Data we collect</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>What</th><th>Where it lives</th><th>Shared?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>App activity</td>
+        <td>App interactions: power inputs you type, saved rack power budgets, disclaimer acceptance flag</td>
+        <td>Device-local SQLite database (Android internal storage) and SharedPreferences</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Files and docs</td>
+        <td>budget files: CSV and PDF exports you generate from a saved budget</td>
+        <td>App-private cache; handed to the Android share sheet only when you tap share</td>
+        <td>No — shared only at your explicit action</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We do <strong>not</strong> collect: identifiers, email, location, contacts, messages, photos, audio, or any advertising ID.</p>
+
+  <h2>How data is used</h2>
+  <p>Data is used <strong>only</strong> to compute and render your own power results, saved budgets, and exports. It never leaves the device except through a share you initiate yourself.</p>
+
+  <h2>Third parties</h2>
+  <p>Rack Power Toolkit uses the following open-source libraries. None of them transmit your data off the device in this app's configuration:</p>
+  <ul>
+    <li>Drift / sqlite3 — local database</li>
+    <li>shared_preferences — local key/value storage</li>
+    <li>pdf — generates export files on-device (no network)</li>
+    <li>share_plus — hands your export to the Android share sheet</li>
+    <li>fl_chart, go_router, Riverpod — UI only (no network)</li>
+  </ul>
+  <p>The app does not integrate with any ads SDK, tracking SDK, analytics SDK, or crash-reporting SDK.</p>
+
+  <h2>Permissions</h2>
+  <p>Rack Power Toolkit requests <strong>no Android permissions</strong> — not even network access. The app is fully offline.</p>
+
+  <h2>Your controls</h2>
+  <ul>
+    <li><strong>Delete all data</strong> — uninstall the app. Android removes all of the app's private storage on uninstall (backup is disabled).</li>
+    <li><strong>Export</strong> — each saved budget offers PDF and CSV export through the Android share sheet; the files are yours to keep.</li>
+  </ul>
+
+  <h2>Not professional electrical advice</h2>
+  <p>Rack Power Toolkit is a calculation aid. It is <strong>not a substitute for professional electrical judgement</strong>: every result shows its formula and assumptions — verify them against your nameplate ratings and local electrical codes before acting on them. UPS runtimes are estimates only.</p>
+
+  <h2>Children</h2>
+  <p>Rack Power Toolkit is a general-audience professional utility. It is not directed at children under 13, and it collects no data from anyone.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>Material changes will be noted in the <em>Last updated</em> line at the top of this page and called out in the app's release notes for the relevant version.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or concerns? Email <a href="mailto:privacy@applair.in">privacy@applair.in</a>. I read every message.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> nitishagar.</span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=2" defer></script>
+</body>
+</html>
