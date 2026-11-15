@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rack Power Toolkit — AppLair work</title>
+  <meta name="description" content="Rack Power Toolkit: offline PDU power calculators, budgets and UPS estimates for technicians. Designed and built by AppLair with Flutter. Zero permissions.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <meta property="og:title" content="Rack Power Toolkit — AppLair work">
+  <meta property="og:description" content="Offline rack PDU power calculators for technicians. Fully offline Flutter app by AppLair.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://applair.in/apps/pdutoolkit/">
+  <meta property="og:image" content="https://applair.in/assets/apps/pdu-icon.png">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>AppLair</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/#work">← All work</a>
+
+  <div class="app-hero">
+    <img class="app-icon" src="/assets/apps/pdu-icon.png" alt="Rack Power Toolkit app icon" width="72" height="72">
+    <div>
+      <h1>Rack Power Toolkit</h1>
+      <p class="lede">Offline PDU power calculators for rack technicians.</p>
+      <span class="status-pill">Closed testing</span>
+    </div>
+  </div>
+
+  <div class="fact-grid">
+    <div class="fact"><div class="k">Platform</div><div class="v">Android</div></div>
+    <div class="fact"><div class="k">Stack</div><div class="v">Flutter · SQLite</div></div>
+    <div class="fact"><div class="k">Permissions</div><div class="v">Zero</div></div>
+    <div class="fact"><div class="k">Model</div><div class="v">Paid upfront, no ads</div></div>
+  </div>
+
+  <h2>What it does</h2>
+  <p>An offline power companion for data-centre and electrical technicians, colo engineers and students. Every result shows its formula and assumptions.</p>
+  <ul>
+    <li>kW / kVA / amps for single-phase and three-phase (line-to-line and line-to-neutral)</li>
+    <li>PUE and BTU / kW / tons conversions</li>
+    <li>PDU phase balance with imbalance percentage and derating-basis control</li>
+    <li>UPS runtime estimates with inputs shown and limits disclaimed</li>
+    <li>Saved rack power budgets on-device, with totals</li>
+    <li>PDF and CSV export through the share sheet</li>
+  </ul>
+
+  <h2>Screens</h2>
+  <div class="shot-grid">
+    <figure>
+      <img src="/assets/apps/pdu-calculator.png" alt="Power conversion calculators" loading="lazy">
+      <figcaption>Live power conversions</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/apps/pdu-balance.png" alt="PDU phase balance screen" loading="lazy">
+      <figcaption>Phase balance</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/apps/pdu-budgets.png" alt="Saved rack budgets screen" loading="lazy">
+      <figcaption>Saved budgets</figcaption>
+    </figure>
+  </div>
+
+  <h2>Under the hood</h2>
+  <ul>
+    <li>Pure, unit-tested power math — voltage basis is part of the API, never a hidden assumption</li>
+    <li>Overflow/NaN-safe display rules; invalid input shows a message, never a bad number</li>
+    <li>Fully offline: no network SDK of any kind, enforced by CI checks on every push</li>
+    <li>Zero Android permissions; first-run disclaimer gate</li>
+    <li>Data-safety contract kept in lock-step with the Play declaration</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>Inputs, budgets and exports never leave the device except through a share the user initiates. Read the <a href="/privacy/pdutoolkit/">privacy policy</a> and the <a href="/privacy/pdutoolkit/data-safety.html">data-safety declaration</a>.</p>
+
+  <nav class="app-nav" aria-label="More work">
+    <a href="/apps/cape/">← cape</a>
+    <a href="/apps/tabata/">Tabata Timer →</a>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> AppLair.</span>
+    <span><a href="mailto:projects@applair.in">Start a project →</a></span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=3" defer></script>
+</body>
+</html>

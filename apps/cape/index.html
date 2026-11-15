@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>cape — AppLair work</title>
+  <meta name="description" content="cape: a self-directed nicotine taper tracker for adults 18+. Designed and built by AppLair with Flutter. Offline-first, no accounts, no ads.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <meta property="og:title" content="cape — AppLair work">
+  <meta property="og:description" content="Self-directed nicotine taper tracker for adults 18+. Offline-first Flutter app by AppLair.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://applair.in/apps/cape/">
+  <meta property="og:image" content="https://applair.in/assets/apps/cape-icon.png">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>AppLair</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/#work">← All work</a>
+
+  <div class="app-hero">
+    <img class="app-icon" src="/assets/apps/cape-icon.png" alt="cape app icon" width="72" height="72">
+    <div>
+      <h1>cape</h1>
+      <p class="lede">Self-directed nicotine taper tracker for adults 18+.</p>
+      <span class="status-pill">Pre-launch · paid relaunch</span>
+    </div>
+  </div>
+
+  <div class="fact-grid">
+    <div class="fact"><div class="k">Platform</div><div class="v">Android</div></div>
+    <div class="fact"><div class="k">Stack</div><div class="v">Flutter · Riverpod · SQLite</div></div>
+    <div class="fact"><div class="k">Data</div><div class="v">On-device only</div></div>
+    <div class="fact"><div class="k">Accounts / ads</div><div class="v">None</div></div>
+  </div>
+
+  <h2>What it does</h2>
+  <p>Tell cape your starting daily intake and it builds a gradual, week-by-week taper plan with steady plateaus — then helps you follow it, one day at a time.</p>
+  <ul>
+    <li>Personalized taper plans (2, 4 or 8 weeks) with daily targets</li>
+    <li>Daily check-ins with optional notes</li>
+    <li>Craving log with intensity tracking</li>
+    <li>Streaks, XP, achievements and milestones</li>
+    <li>Guided breathing for tough moments</li>
+    <li>Optional daily reminder, fully on-device</li>
+    <li>Hold-a-week option when life gets in the way</li>
+    <li>Local data export and in-app delete-all-data</li>
+  </ul>
+
+  <h2>Screens</h2>
+  <div class="shot-grid">
+    <figure>
+      <img src="/assets/apps/cape-home.png" alt="cape home screen with today's taper target" loading="lazy">
+      <figcaption>Today's target at a glance</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/apps/cape-plan.png" alt="cape taper plan choice screen" loading="lazy">
+      <figcaption>Choosing a taper plan</figcaption>
+    </figure>
+  </div>
+
+  <h2>Under the hood</h2>
+  <ul>
+    <li>Piecewise-linear taper math with weekly checkpoints, unit-tested</li>
+    <li>Drift/SQLite persistence with Riverpod state management</li>
+    <li>Material 3 light/dark themes, WCAG-aware accent palette</li>
+    <li>Age gate (18+) and health disclosure on first launch</li>
+    <li>CI release gates: analyze, tests, permission and no-network checks</li>
+  </ul>
+  <p><strong>Not a medical device.</strong> cape is an educational self-tracking tool and makes no treatment claims — the listing, age gate and disclosures all say so consistently.</p>
+
+  <h2>Privacy</h2>
+  <p>Everything entered stays on the phone: no backend, no accounts, no analytics or crash SDK. Read the <a href="/privacy/cape/">privacy policy</a> and the <a href="/privacy/cape/data-safety.html">data-safety declaration</a>.</p>
+
+  <nav class="app-nav" aria-label="More work">
+    <a href="/apps/tabata/">← Tabata Timer</a>
+    <a href="/apps/pdutoolkit/">Rack Power Toolkit →</a>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> AppLair.</span>
+    <span><a href="mailto:projects@applair.in">Start a project →</a></span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=3" defer></script>
+</body>
+</html>

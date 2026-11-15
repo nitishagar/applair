@@ -2,6 +2,9 @@
 /index.html                 /                        301
 /privacy/index.html         /privacy/                301
 /privacy/cape/index.html    /privacy/cape/           301
+/apps/cape/index.html       /apps/cape/              301
+/apps/pdutoolkit/index.html /apps/pdutoolkit/        301
+/apps/tabata/index.html     /apps/tabata/            301
 /gym/index.html             /gym/                    301
 
 # Legacy Jekyll paths (from the old /privacy baseurl site)

@@ -8,4 +8,7 @@
   <url><loc>https://applair.in/privacy/tabata/data-safety.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://applair.in/privacy/pdutoolkit/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://applair.in/privacy/pdutoolkit/data-safety.html</loc><changefreq>monthly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://applair.in/apps/cape/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://applair.in/apps/pdutoolkit/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://applair.in/apps/tabata/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

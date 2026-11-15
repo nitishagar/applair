@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#0a0b0f">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
-  <link rel="stylesheet" href="/assets/style.css?v=2">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
   <meta property="og:title" content="AppLair — Mobile app consulting">
   <meta property="og:description" content="Ship iOS & Android products that last. Architecture reviews, launches, fractional tech lead, app rescues.">
   <meta property="og:type" content="website">
@@ -26,6 +26,7 @@
       <span>AppLair</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#work">Work</a>
       <a href="#services">Services</a>
       <a href="#approach" class="hide-sm">Approach</a>
       <a href="#contact">Contact</a>
@@ -40,7 +41,88 @@
     <p class="lead">AppLair is a boutique consultancy helping teams design, ship and maintain iOS &amp; Android products that age well — without the churn of the framework du jour.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="mailto:hello@applair.in?subject=AppLair%20inquiry">Start a conversation →</a>
-      <a class="btn btn-ghost" href="#services">See what we do</a>
+      <a class="btn btn-ghost" href="#work">See our work</a>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="kicker">Selected work</div>
+      <h2>Apps we designed, built and shipped.</h2>
+      <p>Production Android apps from our own studio — offline-first, store-ready, and maintained like client work. Each one links to its live privacy and data-safety pages.</p>
+    </div>
+    <div class="work-grid">
+      <article class="app-card">
+        <div class="app-card-top">
+          <img class="app-icon" src="/assets/apps/cape-icon.png" alt="cape app icon" width="56" height="56" loading="lazy">
+          <div>
+            <h3>cape</h3>
+            <p class="app-tag">Nicotine taper tracker · adults 18+</p>
+          </div>
+        </div>
+        <ul>
+          <li>Week-by-week taper plans from starting intake</li>
+          <li>Daily check-ins, craving log, streaks &amp; XP</li>
+          <li>Guided breathing, on-device reminders</li>
+        </ul>
+        <ul class="chips" aria-label="Technologies">
+          <li>Flutter</li>
+          <li>SQLite</li>
+          <li>Offline-first</li>
+        </ul>
+        <div class="app-links">
+          <a class="more" href="/apps/cape/">Details →</a>
+          <a href="/privacy/cape/">Privacy</a>
+        </div>
+      </article>
+      <article class="app-card">
+        <div class="app-card-top">
+          <img class="app-icon" src="/assets/apps/pdu-icon.png" alt="Rack Power Toolkit app icon" width="56" height="56" loading="lazy">
+          <div>
+            <h3>Rack Power Toolkit</h3>
+            <p class="app-tag">PDU power calculators · field tool</p>
+          </div>
+        </div>
+        <ul>
+          <li>kW/kVA/amps, PUE, BTU conversions</li>
+          <li>Phase balance + UPS runtime estimates</li>
+          <li>Saved budgets, PDF/CSV export</li>
+        </ul>
+        <ul class="chips" aria-label="Technologies">
+          <li>Flutter</li>
+          <li>Zero permissions</li>
+          <li>Fully offline</li>
+        </ul>
+        <div class="app-links">
+          <a class="more" href="/apps/pdutoolkit/">Details →</a>
+          <a href="/privacy/pdutoolkit/">Privacy</a>
+        </div>
+      </article>
+      <article class="app-card">
+        <div class="app-card-top">
+          <img class="app-icon" src="/assets/apps/tabata-icon.png" alt="Tabata Timer app icon" width="56" height="56" loading="lazy">
+          <div>
+            <h3>Tabata Timer</h3>
+            <p class="app-tag">HIIT interval timer · no ads</p>
+          </div>
+        </div>
+        <ul>
+          <li>Tabata, Rounds and Stopwatch modes</li>
+          <li>Workout history + stats on-device</li>
+          <li>Sound cues, landscape gym mode</li>
+        </ul>
+        <ul class="chips" aria-label="Technologies">
+          <li>React Native</li>
+          <li>Redux</li>
+          <li>Offline-first</li>
+        </ul>
+        <div class="app-links">
+          <a class="more" href="/apps/tabata/">Details →</a>
+          <a href="/privacy/tabata/">Privacy</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -123,9 +205,10 @@
 <footer class="footer">
   <div class="footer-inner">
     <span>© <span data-year>2026</span> AppLair.</span>
+    <span><a href="/privacy/">Privacy policies</a></span>
   </div>
 </footer>
 
-<script src="/assets/main.js?v=2" defer></script>
+<script src="/assets/main.js?v=3" defer></script>
 </body>
 </html>

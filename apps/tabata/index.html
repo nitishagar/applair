@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tabata Timer — AppLair work</title>
+  <meta name="description" content="Tabata Timer: a HIIT interval timer for Tabata, rounds and stopwatch workouts. Designed and built by AppLair with React Native. No ads, works offline.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=3">
+  <meta property="og:title" content="Tabata Timer — AppLair work">
+  <meta property="og:description" content="HIIT interval timer: Tabata, rounds and stopwatch. Offline-first React Native app by AppLair.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://applair.in/apps/tabata/">
+  <meta property="og:image" content="https://applair.in/assets/apps/tabata-icon.png">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true"></span>
+      <span>AppLair</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/#work">Work</a>
+      <a href="/#services">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/#work">← All work</a>
+
+  <div class="app-hero">
+    <img class="app-icon" src="/assets/apps/tabata-icon.png" alt="Tabata Timer app icon" width="72" height="72">
+    <div>
+      <h1>Tabata Timer</h1>
+      <p class="lede">HIIT interval timer: Tabata, rounds and stopwatch.</p>
+      <span class="status-pill">Pre-launch · v1</span>
+    </div>
+  </div>
+
+  <div class="fact-grid">
+    <div class="fact"><div class="k">Platform</div><div class="v">Android</div></div>
+    <div class="fact"><div class="k">Stack</div><div class="v">React Native · Redux</div></div>
+    <div class="fact"><div class="k">Data</div><div class="v">On-device only</div></div>
+    <div class="fact"><div class="k">Accounts / ads</div><div class="v">None</div></div>
+  </div>
+
+  <h2>What it does</h2>
+  <p>A simple, reliable interval timer for high-intensity training — built for HIIT athletes, trainers and anyone who wants a no-nonsense workout timer.</p>
+  <ul>
+    <li>Tabata: prepare, work, rest, rounds, cycles, rest-between-cycles and cooldown</li>
+    <li>Rounds mode for boxing, martial arts and circuits</li>
+    <li>Stopwatch with prepare countdown, laps and interval beeps</li>
+    <li>Workout history with progress stats, stored on-device</li>
+    <li>Countdown, phase-change and completion sound cues</li>
+    <li>Landscape mode for gym display</li>
+  </ul>
+
+  <h2>Screens</h2>
+  <div class="shot-grid">
+    <figure>
+      <img src="/assets/apps/tabata-running.png" alt="Tabata workout in progress showing work phase" loading="lazy">
+      <figcaption>Mid-workout, work phase</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/apps/tabata-setup.png" alt="Tabata timer setup screen" loading="lazy">
+      <figcaption>Timer setup</figcaption>
+    </figure>
+  </div>
+
+  <h2>Under the hood</h2>
+  <ul>
+    <li>Background-safe timer driver — keeps running when the app is minimized</li>
+    <li>Redux-persisted settings with one-shot history migration</li>
+    <li>Color-coded phases and wake lock for glanceable gym use</li>
+    <li>Analytics strictly opt-in and off by default; tests fully mocked, no network calls</li>
+    <li>Deterministic timer test helpers for a green, flake-free suite</li>
+  </ul>
+
+  <h2>Privacy</h2>
+  <p>By default the app collects nothing — history, settings and feedback stay on the device. Read the <a href="/privacy/tabata/">privacy policy</a> and the <a href="/privacy/tabata/data-safety.html">data-safety declaration</a>.</p>
+
+  <nav class="app-nav" aria-label="More work">
+    <a href="/apps/pdutoolkit/">← Rack Power Toolkit</a>
+    <a href="/apps/cape/">cape →</a>
+  </nav>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> AppLair.</span>
+    <span><a href="mailto:projects@applair.in">Start a project →</a></span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=3" defer></script>
+</body>
+</html>
