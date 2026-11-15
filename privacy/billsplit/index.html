@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BillSplit — Privacy policy</title>
+  <meta name="description" content="Privacy policy for BillSplit, an offline-first receipt scanner and bill splitter for Android.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand brand-static" href="/privacy/">
+      <span>Privacy policies</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/privacy/">All policies</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/privacy/">← All privacy policies</a>
+
+  <h1>BillSplit — Privacy policy</h1>
+  <p class="updated">Last updated: 2026-11-15</p>
+
+  <p><strong>BillSplit</strong> (<code>com.nitishagar.billsplit</code>) is an offline-first optical receipt scanner and bill splitter for Android.</p>
+
+  <h2>Summary</h2>
+  <p><strong>Your receipts never leave your phone.</strong> Capture, text recognition, parsing, splitting math, and export rendering all run on-device — including in airplane mode. BillSplit has no account system and uses no analytics, advertising, or crash-reporting SDK. The only data that ever leaves the device is the optional one-time SplitPro purchase, which is processed by Google Play (see below).</p>
+
+  <h2>Data we collect</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>What</th><th>Where it lives</th><th>Shared?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Photos</td>
+        <td>Receipt photos you capture or import, for on-device text recognition</td>
+        <td>App-private cache; processed on-device, never uploaded by the app</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Financial info</td>
+        <td>UPI IDs you enter (to build payment QR codes); parsed bill amounts</td>
+        <td>Device-local Room database; QR payloads generated on-device</td>
+        <td>No — money moves entirely inside your UPI app</td>
+      </tr>
+      <tr>
+        <td>Financial info</td>
+        <td>SplitPro one-time purchase record</td>
+        <td>Processed by Google Play Billing; the app keeps only a local unlocked flag + purchase token</td>
+        <td>With Google Play, for payment processing only</td>
+      </tr>
+      <tr>
+        <td>Personal info</td>
+        <td>People/squad names you type; saved splits</td>
+        <td>Device-local Room database</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We do <strong>not</strong> collect: identifiers, email, location, contacts, messages, audio, browsing history, or any advertising ID.</p>
+  <p>Receipt images and export cards are shared externally only when <strong>you</strong> tap Share — through Android's share sheet, to the app <strong>you</strong> choose.</p>
+
+  <h2>How data is used</h2>
+  <p>Data is used <strong>only</strong> to scan your receipts, compute your splits, and render your exports — all on your device. UPI IDs are used solely to build <code>upi://pay</code> links and QR codes locally; BillSplit never initiates, processes, or observes any payment.</p>
+
+  <h2>Third parties</h2>
+  <ul>
+    <li><strong>Google Play services — ML Kit (Document Scanner, Text Recognition).</strong> Capture cleanup and OCR run on-device. BillSplit requests no camera permission; scanning runs inside the Play services flow, under Google's privacy policy.</li>
+    <li><strong>Google Play Billing.</strong> Processes the optional SplitPro one-time purchase, under Google's privacy policy. No other purchase or payment data touches our code.</li>
+    <li><strong>On-device libraries only otherwise</strong> — Jetpack Room (storage), ZXing (QR generation), Jetpack Compose UI. None of them transmit data.</li>
+  </ul>
+  <p>BillSplit does not integrate with any ads SDK, tracking SDK, analytics SDK, or crash-reporting SDK.</p>
+
+  <h2>Permissions</h2>
+  <p>BillSplit requests <strong>no runtime permissions</strong> — no camera, no location, no contacts, no storage, no internet access for its core features.</p>
+
+  <h2>Your controls</h2>
+  <ul>
+    <li><strong>Delete all data</strong> — uninstall the app. Android removes all of BillSplit's private storage on uninstall.</li>
+    <li><strong>Receipt photos</strong> — clearing the app's cache removes any cached scan images.</li>
+  </ul>
+
+  <h2>Children</h2>
+  <p>BillSplit is a general finance utility with no age-restricted content. Since the app collects no personal data beyond what is listed above (all on-device), there is nothing to delete beyond uninstalling.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>Material changes will be noted in the <em>Last updated</em> line at the top of this page and called out in the app's release notes for the relevant version.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or concerns? Email <a href="mailto:hello@applair.in">hello@applair.in</a> or open an issue at <a href="https://github.com/nitishagar/billsplit-android/issues">github.com/nitishagar/billsplit-android/issues</a>.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> nitishagar.</span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=2" defer></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BillSplit — Play Store Data Safety</title>
+  <meta name="description" content="Google Play Data Safety declaration for BillSplit.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand brand-static" href="/privacy/">
+      <span>Privacy policies</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/privacy/">All policies</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/privacy/billsplit/">← BillSplit privacy policy</a>
+
+  <h1>BillSplit — Google Play Data Safety Declaration</h1>
+  <p class="dim">This page is the source of truth for the <strong>Data Safety</strong> section of the BillSplit Play Store listing. Copy the values below into the Play Console when prompted.</p>
+
+  <h2>Data collection &amp; sharing summary</h2>
+  <table>
+    <thead>
+      <tr><th>Question</th><th>Answer</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Does the app collect or share any user data?</td><td><strong>Yes</strong> (on-device processing; sharing limited to Google Play purchase processing)</td></tr>
+      <tr><td>Is all of the user data collected by the app encrypted in transit?</td><td><strong>Yes</strong> — on-device data never transmits; the Play Billing purchase uses Google's encrypted channel</td></tr>
+      <tr><td>Do you provide a way for users to request that their data be deleted?</td><td><strong>Yes — uninstalling the app removes all app-local data</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Data types collected</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category / Type</th><th>Collected</th><th>Shared</th><th>Ephemeral</th><th>Required / Optional</th><th>Purposes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Photos and videos → Photos (receipt images for OCR)</td>
+        <td>Yes</td><td>No</td><td>No</td><td>Required</td><td>App functionality</td>
+      </tr>
+      <tr>
+        <td>Financial info → User payment info (UPI IDs you enter)</td>
+        <td>Yes</td><td>No</td><td>No</td><td>Required</td><td>App functionality</td>
+      </tr>
+      <tr>
+        <td>Financial info → Purchase history (SplitPro via Play Billing)</td>
+        <td>Yes</td><td>Yes (Google Play, payment processing)</td><td>No</td><td>Required</td><td>App functionality, Payments</td>
+      </tr>
+      <tr>
+        <td>Personal info → Name (people/squad names)</td>
+        <td>Yes</td><td>No</td><td>No</td><td>Required</td><td>App functionality</td>
+      </tr>
+      <tr>
+        <td>App activity → Other user-generated content (saved splits)</td>
+        <td>Yes</td><td>No</td><td>No</td><td>Required</td><td>App functionality</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="dim">Note: "Collected" in Google's terms here means "the app records this on device." Only the Play Billing purchase leaves the device, to Google Play for payment processing.</p>
+
+  <h2>Security practices</h2>
+  <ul>
+    <li>Data is encrypted in transit — <strong>Yes</strong> (on-device data never transmits; purchases use Google's encrypted channel)</li>
+    <li>You can request data be deleted — <strong>users can uninstall to remove all data</strong></li>
+    <li>Committed to Play Families Policy — N/A (general finance utility, no children's content)</li>
+    <li>Independent security review — <strong>No</strong> (solo developer)</li>
+  </ul>
+
+  <h2>Third-party SDKs</h2>
+  <p>BillSplit integrates <strong>no</strong> analytics, advertising, tracking, or crash-reporting SDKs. Google Play services ML Kit (on-device OCR) and Google Play Billing (one-time purchase) run under Google's privacy policy.</p>
+
+  <h2>Links</h2>
+  <ul>
+    <li>Full privacy policy: <a href="https://applair.in/privacy/billsplit/">applair.in/privacy/billsplit/</a></li>
+    <li>App source: <a href="https://github.com/nitishagar/billsplit-android">github.com/nitishagar/billsplit-android</a> (private)</li>
+    <li>Issues / contact: <a href="https://github.com/nitishagar/billsplit-android/issues">github.com/nitishagar/billsplit-android/issues</a> · <a href="mailto:hello@applair.in">hello@applair.in</a></li>
+  </ul>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> nitishagar.</span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=2" defer></script>
+</body>
+</html>
