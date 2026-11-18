@@ -1,0 +1,25 @@
+# AppLair
+
+> Open software consulting for mobile products, platforms, and AI tooling.
+> Site: https://applair.in/
+
+## Contact
+- General: hello@applair.in
+- Projects: projects@applair.in
+- Privacy: privacy@applair.in
+
+## Services
+- Architecture and code review for mobile and platform codebases
+- App Store / Play Store launch and compliance shipping
+- Fractional tech lead engagements
+- Open source and AI tooling (MCP, LLM gateway guardrails)
+
+## Open source to highlight
+- receipta — https://github.com/nitishagar/receipta — npm packages @receipta/* (Apache-2.0)
+- lexvault — https://github.com/nitishagar/lexvault — PyPI package lexvault (Apache-2.0)
+- SoberAI — https://github.com/nitishagar/sober-ai — MIT
+- OTel Query MCP — https://github.com/nitishagar/OTel-query-mcp — Apache-2.0
+- mcp-author-kit — https://github.com/nitishagar/mcp-author-kit — MIT Cursor plugin
+
+## Optional
+- Privacy policies: https://applair.in/privacy/
