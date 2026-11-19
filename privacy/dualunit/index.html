@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DualUnit — Privacy policy</title>
+  <meta name="description" content="Privacy policy for DualUnit, a Shopify app for market-adaptive unit pricing.">
+  <meta name="theme-color" content="#0a0b0f">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="mask-icon" href="/assets/logo-mono.svg" color="#8b5cf6">
+  <link rel="stylesheet" href="/assets/style.css?v=2">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="brand brand-static" href="/privacy/">
+      <span>Privacy policies</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/privacy/">All policies</a>
+    </nav>
+  </div>
+</header>
+
+<main class="doc">
+  <a class="back" href="/privacy/">← All privacy policies</a>
+
+  <h1>DualUnit — Privacy policy</h1>
+  <p class="updated">Last updated: 2026-11-19</p>
+
+  <p><strong>DualUnit</strong> is a Shopify app that renders market-adaptive unit prices on
+  merchants&apos; storefronts: the statutory EU base price (<i>Grundpreis</i>) for EU shoppers
+  and per-oz / per-lb shelf-style pricing for US shoppers.</p>
+
+  <h2>Summary</h2>
+  <p><strong>DualUnit collects no shopper data and shares no data.</strong> Unit-price math runs
+  entirely in the shopper&apos;s browser. From merchants we store only what the app needs to
+  operate: store domain, plan state, and display preferences. Nominal quantities merchants enter
+  are stored as metafields on their own Shopify products — not in our database.</p>
+
+  <h2>Data we collect</h2>
+  <table>
+    <thead>
+      <tr><th>Category</th><th>What</th><th>Where it lives</th><th>Shared?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Store information</td>
+        <td>Store domain, plan tier, display preferences</td>
+        <td>Encrypted PostgreSQL (Neon) + AWS us-east-1</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Catalog identifiers</td>
+        <td>Product/variant IDs, titles, prices — read only for the Unit Specs manager</td>
+        <td>Fetched live via the Shopify Admin API; not retained beyond the session</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Session tokens</td>
+        <td>Shopify session tokens via Shopify&apos;s official session storage</td>
+        <td>Encrypted database; used only to call Shopify APIs on the merchant&apos;s behalf</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>We do <strong>not</strong> collect: shopper personal data, orders, browsing behavior,
+  identifiers, email, location, or any advertising ID.</p>
+
+  <h2>How we use it</h2>
+  <ul>
+    <li>Listing products/variants in the Unit Specs manager.</li>
+    <li>Saving nominal quantities to the merchant&apos;s product metafields.</li>
+    <li>Enforcing plan limits and showing plan status in the admin dashboard.</li>
+  </ul>
+
+  <h2>Third parties</h2>
+  <p>Infrastructure providers (AWS, Neon) process data only as necessary to operate the service,
+  as data processors under our direction. We do not sell, rent, or share data with anyone else.</p>
+
+  <h2>Retention</h2>
+  <ul>
+    <li><strong>While installed</strong> — settings and plan state for the subscription duration.</li>
+    <li><strong>After uninstall</strong> — automatic deletion once Shopify sends the data-erasure
+    request. Unit-spec metafields stay on the merchant&apos;s products until the merchant removes them.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>Merchants may request access, correction, deletion, or portability of their data at any time
+  under GDPR, CCPA/CPRA, and similar laws. Uninstalling the app triggers automatic deletion.</p>
+
+  <h2>Cookies and tracking</h2>
+  <p>No cookies, analytics, or third-party trackers. Admin auth uses Shopify session tokens.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>Material changes will be noted in the <em>Last updated</em> line at the top of this page.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or concerns? Email <a href="mailto:privacy@applair.in">privacy@applair.in</a> or open a public issue at <a href="https://github.com/nitishagar/dualunit/issues">github.com/nitishagar/dualunit/issues</a>. I read every issue.</p>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span>© <span data-year>2026</span> nitishagar.</span>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v=2" defer></script>
+</body>
+</html>
